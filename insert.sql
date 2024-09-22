@@ -1,4 +1,5 @@
 USE CRYPTO_DATABASE;
+GO
 
 -- INSERE DADOS NAS TABELAS
 BEGIN TRANSACTION;
@@ -21,7 +22,7 @@ VALUES (2, 'Icaro', 'icaro@example.com', '0987654321',  HASHBYTES('MD5', 'senha4
 INSERT INTO Cliente (CodigoCliente, Nome, Email, Celular, PassHash, MoedaPrincipal) 
 VALUES (3, 'Leonador', 'leo@example.com', '5555555555',  HASHBYTES('MD5', 'senha789'), 'BTC');
 INSERT INTO Cliente (CodigoCliente, Nome, Email, Celular, PassHash, MoedaPrincipal) 
-VALUES (4, 'Alexandre', 'leo@example.com', '5555555555',  HASHBYTES('MD5', 'senha789'), 'BTC');
+VALUES (4, 'Alexandre', 'alexandre@example.com', '5555555555',  HASHBYTES('MD5', 'senha789'), 'BTC');
 
 INSERT INTO Carteira (Endereco, CodigoCorretora, CodigoCliente) 
 VALUES ('vitor_carteira', 1, 1);
@@ -47,6 +48,7 @@ VALUES (6, 'leo_carteira', 'BTC', 0.5);
 INSERT INTO ItemCarteira (CodigoItemCarteira, Endereco, CodigoMoeda, Quantidade) 
 VALUES (7, 'alexandre_carteira', 'BTC', 2.0);
 
--- Confirme as alterações usando COMMIT ou as defaça usando ROLLBACK
-COMMIT 
--- ROLLBACK
+-- Confirme as alterações usando COMMIT ou as desfaça usando ROLLBACK
+COMMIT;
+-- ROLLBACK;
+GO
